@@ -1,0 +1,12 @@
+.MMM-Today .articleContent {
+    transform: 100;
+}
+
+.MMM-Today .article-content {
+    opacity: 1;
+    transition: opacity 1s ease; /* Add a 1-second fading transition */
+  }
+  
+  .MMM-Today .article-content.fade-out {
+    opacity: 0;
+  }
