@@ -2,8 +2,8 @@ Module.register("MMM-WebTracker", {
     // Default module config
     defaults: {
         url: "https://example.com",
-        querySelector: "body > div > p:nth-child(2)", // Example: fetches the first <h1> element
-        updateInterval: 900, // Update interval in seconds (default is 15 min)
+        querySelector: "body > div > p:nth-child(2)",
+        updateInterval: 7200, // Default: 2 hours
     },
 
     // Start function
