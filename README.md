@@ -1,6 +1,6 @@
 # MMM-WebTracker
 
-MMM-WebTracker is a MagicMirror² module that fetches a specific element from a website. It then displays the inner plain text of the element. This module is also a useful foundation for other module projects that requires web scraping.
+MMM-WebTracker is a MagicMirror² module that fetches a specific element from a website. It then displays the inner plain text of that element. This module is also a useful foundation for other module projects that require web scraping.
 
 ![Screenshot](screenshot.png)
 
@@ -11,7 +11,7 @@ Clone the MMM-WebTracker repository into the `modules` directory of your MagicMi
 cd MagicMirror/modules
 git clone https://github.com/ItsMeBrille/MMM-WebTracker.git
 ```
-This module requires the cheerio package to dig through the DOM. Install it in the newly created `MMM-WebTracker` directory using the following commands:
+This module requires the Cheerio package to dig through the DOM. Install it in the newly created `MMM-WebTracker` directory using the following commands:
 ```shell
 cd MMM-WebTracker
 npm install cheerio
@@ -41,8 +41,8 @@ To use MMM-WebTracker, add it to the `modules` array in the `config/config.js` f
 
 The `querySelector` can be obtained using the browser inspector tool:
 1. Press `F12` to open the inspector panel.
-2. Use the inspect tool in the upper left corner and click the element you want to track. Make shure you cover the entire object you want to track.
-3. Right click the element highlighted in the `elements` tab of the panel and click copy -> copy selector.
+2. Use the `inspect` tool in the upper left corner and click the element you want to track. Make sure you cover the entire object you wish to track.
+3. Right-click the element highlighted in the `elements` tab of the panel and click copy -> copy selector.
 
 ![Explanation of query selector](explanation.png)
 
