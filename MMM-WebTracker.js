@@ -3,12 +3,13 @@ Module.register("MMM-WebTracker", {
     defaults: {
         url: "https://example.com",
         querySelector: "body > div > p:nth-child(2)",
-        updateInterval: 7200, // Default: 2 hours
+        updateInterval: 7200, // Default: 2 hours,
+        loadingMessage: "", // Default: none
     },
 
-    // Start function
+    // Start
     start: function () {
-        this.trackedData = ""; // Initialize tracked data
+        this.trackedData = this.loadingMessage;
         this.sendSocketNotification("START_TRACKING", this.config);
         this.scheduleUpdate();
     },
@@ -23,7 +24,7 @@ Module.register("MMM-WebTracker", {
 
     // Styles
     getStyles: function () {
-        return ["MMM-WebTracker.css"]; // Add your CSS file name here
+        return ["MMM-WebTracker.css"];
     },
 
     // DOM generator
@@ -39,7 +40,7 @@ Module.register("MMM-WebTracker", {
         var self = this;
         setInterval(function () {
             self.updateData();
-        }, (this.config.updateInterval < 10 || 10) * 1000); // At least 10 seconds
+        }, (this.config.updateInterval < 15 || 15) * 1000); // Custom interval, at least 15 seconds
     },
 
     // Update tracked data

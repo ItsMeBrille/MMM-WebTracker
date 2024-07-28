@@ -28,7 +28,8 @@ To use MMM-WebTracker, add it to the `modules` array in the `config/config.js` f
   config: {
     url: "https://example.com",
     querySelector: "body > div > p:nth-child(2)",
-    updateInterval: 7200, // Optional (defaults to 2 hours)
+    updateInterval: 7200, // Update interval in seconds (default is 2 hours)
+    loadingMessage: "", // Message shown before other text is fetched
   }
 },
 ```
