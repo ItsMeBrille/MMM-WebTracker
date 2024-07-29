@@ -37,7 +37,7 @@ To use MMM-WebTracker, add it to the `modules` array in the `config/config.js` f
 ### Parameters
 
 - `url`: URL of the website to fetch.
-- `querySelector`: Query selector for the element to track. See https://www.w3schools.com/cssref/css_selectors.php for reference
+- `querySelector`: Query selector for the element to track. See [css_selectors](https://www.w3schools.com/cssref/css_selectors.php) for reference
 - `updateInterval`: Specifies how often to update the tracked data in seconds. Minimum 10s (default is 2 hours)
 
 The `querySelector` can be obtained using the browser inspector tool:
@@ -47,9 +47,9 @@ The `querySelector` can be obtained using the browser inspector tool:
 
 ![Explanation of query selector](explanation.png)
 
-## Usage
+## Tables
 
-MMM-WebTracker is a MagicMirror² module that fetches a specific element from a website and displays its plain text content on the Magic Mirror screen. The module will update the displayed content based on the specified update interval.
+MMM-WebTracker has a special rule for formatting tables. If the tag pointed to is recognised as a table or a row in a table it will handle it differently. It will remove existing formatting and display a pretty table as defined in the [stylesheet](MMM-WebTracker.css).
 
 ## Dependencies
 

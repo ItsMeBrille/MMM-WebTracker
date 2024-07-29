@@ -1,12 +1,24 @@
-.MMM-Today .articleContent {
-    transform: 100;
+.webtracker-table {
+  border-collapse: collapse;
 }
 
-.MMM-Today .article-content {
-    opacity: 1;
-    transition: opacity 1s ease; /* Add a 1-second fading transition */
-  }
-  
-  .MMM-Today .article-content.fade-out {
-    opacity: 0;
-  }
+.webtracker-table th, .webtracker-table td {
+  padding-left: 8px;
+  padding-right: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+  height: 10px;
+}
+
+.webtracker-table th {
+  font-size: 0.8em;
+}
+
+.webtracker-table td {
+  font-size: 0.6em;
+}
+
+.webtracker-table tr:first-child td, .webtracker-table tr:first-child th { border-top: 0; }
+.webtracker-table tr td:first-child, .webtracker-table tr th:first-child { border-left: 0; }
+.webtracker-table tr:last-child td, .webtracker-table tr:last-child th { border-bottom: 0; }
+.webtracker-table tr td:last-child, .webtracker-table tr th:last-child { border-right: 0; }

@@ -24,11 +24,34 @@ module.exports = NodeHelper.create({
         const self = this;
         request(this.config.url, function (error, response, body) {
             if (!error && response.statusCode == 200) {
-                const $ = cheerio.load(body);
-                const selectedElement = $(self.config.querySelector).text().trim();
+                // Generate output html
+                const html = (() => {
+                    const $ = cheerio.load(body);
+                    const pointedElement = $(self.config.querySelector);
+                    
+                    // Remove inline styling
+                    pointedElement.find('[style]').removeAttr('style');
+
+                    // Remove link tags
+                    pointedElement.find('a').each(function() {
+                        $(this).replaceWith($(this).html());
+                    });
+
+                    // Check if the selected element is a table
+                    if (['tr', 'th', 'table'].includes(pointedElement.prop('tagName').toLowerCase())) {
+                        // Remove formatting tags (and the table tag)
+                        pointedElement.find('b, i, strong, table').each(function() {
+                            $(this).replaceWith($(this).html());
+                        });
+                        return `<table class="webtracker-table">${pointedElement.html()}</table>`;
+                    }
+                    return pointedElement.html();
+                })();
+
+                // Send the modified HTML content in the notification
                 self.sendSocketNotification("DATA_UPDATED", {
                     url: self.config.url,
-                    data: selectedElement,
+                    data: html
                 });
             } else {
                 console.error("Error fetching data:", error);
