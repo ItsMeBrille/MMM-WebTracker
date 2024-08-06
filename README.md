@@ -49,7 +49,9 @@ The `querySelector` can be obtained using the browser inspector tool:
 
 ## Tables
 
-MMM-WebTracker has a special rule for formatting tables. If the tag pointed to is recognised as a table or a row in a table it will handle it differently. It will remove existing formatting and display a pretty table as defined in the [stylesheet](MMM-WebTracker.css).
+MMM-WebTracker has a special rule for formatting tables. If the tag pointed to is recognised as a table or a row in a table it will handle it differently. It will remove existing formatting and display a table like the one bellow as defined in the [stylesheet](MMM-WebTracker.css).
+
+![Image of table](screenshot2.png)
 
 ## Dependencies
 
