@@ -10,13 +10,13 @@ Module.register("MMM-WebTracker", {
     // Start
     start: function () {
         this.trackedData = this.loadingMessage;
-        this.sendSocketNotification("START_TRACKING", this.config);
+        this.sendSocketNotification("WEBTRACKER_START", this.config);
         this.scheduleUpdate();
     },
 
     // Notification handler
     socketNotificationReceived: function (notification, payload) {
-        if (notification === "DATA_UPDATED" && payload.url === this.config.url) {
+        if (notification === "WEBTRACKER_DATA_UPDATED" && payload.url === this.config.url) {
             this.trackedData = payload.data;
             this.updateDom();
         }
@@ -45,6 +45,6 @@ Module.register("MMM-WebTracker", {
 
     // Update tracked data
     updateData: function () {
-        this.sendSocketNotification("UPDATE_TRACKING", this.config);
+        this.sendSocketNotification("WEBTRACKER_UPDATE", this.config);
     },
 });

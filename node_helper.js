@@ -10,11 +10,11 @@ module.exports = NodeHelper.create({
 
     // Handle socket notifications
     socketNotificationReceived: function (notification, payload) {
-        if (notification === "START_TRACKING") {
+        if (notification === "WEBTRACKER_START") {
             this.config = payload;
             this.getData();
         }
-        if (notification === "UPDATE_TRACKING") {
+        if (notification === "WEBTRACKER_UPDATE") {
             this.getData();
         }
     },
@@ -49,7 +49,7 @@ module.exports = NodeHelper.create({
                 })();
 
                 // Send the modified HTML content in the notification
-                self.sendSocketNotification("DATA_UPDATED", {
+                self.sendSocketNotification("WEBTRACKER_DATA_UPDATED", {
                     url: self.config.url,
                     data: html
                 });
