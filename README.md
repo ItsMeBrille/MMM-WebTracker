@@ -4,6 +4,8 @@ MMM-WebTracker is a MagicMirror² module that fetches a specific element from a 
 
 ![Screenshot](screenshot.png)
 
+PS: **This module is vulnerable to XSS attacks**, meaning that if your target page has malicious intent it may leak data from your Magic Mirror client.
+
 ## Installation
 
 Clone the MMM-WebTracker repository into the `modules` directory of your MagicMirror²:
